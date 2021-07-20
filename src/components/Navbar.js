@@ -5,8 +5,8 @@ import { accountSelector } from '../store/selectors'
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-Danger">
-        <a className="navbar-brand" href="#/">Dapp Exchange</a>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a className="navbar-brand" href="#/">Harpoon Exchange</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -29,6 +29,8 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
   return {
-    account: accountSelector(state)
+    contractsLoaded: contractsLoadedSelector(state)
   }
 }
+
+export default connect(mapStateToProps)(App)
